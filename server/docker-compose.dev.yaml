@@ -1,0 +1,41 @@
+services:
+  client:
+    container_name: habits_dev_client
+    build: ../client
+    image: habits_client
+    ports: 
+      - 8080:8080
+    working_dir: /code
+    volumes:
+      - type: bind
+        source: ../client
+        target: /code
+    command: [ "http-server" ]
+  api:
+    container_name: habits_dev_api
+    ports: 
+      - 3000:3000
+    environment: 
+      - PGUSER=team1
+      - PGHOST=db
+      - PGPASSWORD=team1_password
+      - PGDATABASE=habits
+      - PGPORT=5432
+      - NODE_ENV=development
+    depends_on:
+      - db
+    command: bash -c "npm install && npm run seedDev && npm run dev"
+
+  db:
+    container_name: habits_dev_db
+    volumes:
+      - "dbdata:/var/lib/postgresql/data"
+    environment: 
+      - POSTGRES_DB=habits
+      - POSTGRES_USER=team1
+      - POSTGRES_PASSWORD=team1_password
+volumes:
+  dbdata:
+networks: 
+  default:
+    name: habits_api_dev

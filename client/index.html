@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;800&display=swap" rel="stylesheet">
+    <title>Atomic Addicts</title>
+    <link rel="shortcut icon" type="image/png" href="/client/pics/habitLogo.webp">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/habits.css">
+    <link rel="stylesheet" href="css/metrics.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script defer src ="js/app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+  <!-- modal called from within the Habits page to select activities to track -->
+    <div class="habits-modal disabled">
+      <div class="habits-modal-content">
+        <div class="habits-modal-title">Tracked</div>
+        <div class="habits-modal-form">
+          <div class="habits-entry-wrapper">
+            <label for="checkbox-sleep" class="habits-form-label">Sleep</label>
+            <input id="checkbox-sleep" type="checkbox" checked="checked">
+
+            <label for="habits-form-sleep-hours">Hours</label>
+            <input type="text" id="habits-form-sleep-hours" class="habits-form-input">
+          </div>
+          
+          <div class="habits-entry-wrapper">
+            <label for="checkbox-exercise" class="habits-form-label">Exercise</label>
+            <input  id="checkbox-exercise" type="checkbox">
+
+            <label for="habits-form-exercise-times">Times/week</label>
+            <input type="text" id="habits-form-exercise-times" class="habits-form-input">
+          </div> 
+          <div class="habits-entry-wrapper">
+            <label for="checkbox-water" class="habits-form-label">Water Intake</label>
+            <input  id="checkbox-water" type="checkbox">
+
+            <label for="habits-form-water-glasses">Glasses/day</label>
+            <input type="text" id="habits-form-water-glasses" class="habits-form-input">
+          </div>
+          
+          <div class="habits-entry-wrapper">
+            <label for="checkbox-smoking" class="habits-form-label">Smoking</label>
+            <input  id="checkbox-smoking" type="checkbox">
+
+            <label for="habits-form-smoking-cigarettes">Cigarettes/day</label>
+            <input type="text" id="habits-form-smoking-cigarettes" class="habits-form-input">
+          </div>
+          
+          <div class="habits-entry-wrapper">
+            <label for="checkbox-savings" class="habits-form-label">Savings</label>
+            <input  id="checkbox-savings" type="checkbox">
+
+            <label for="habits-form-money-daily">Pounds/day</label>
+            <input type="text" id="habits-form-money-daily" class="habits-form-input">
+          </div>
+          
+          <div class="habits-entry-wrapper">
+            <label for="habits-submit-button" class="habits-form-label"></label>
+            <input id="habits-submit-button" type="submit" value="Save">
+
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- modal called when the login button is pressed -->
+    <div class="modal disabled">
+        <div class="modal-content">
+      
+          <div class="modal-side modal-login">
+            <div class="modal-title">Login</div>
+            <div class="modal-form">
+              <div class="form-email-wrapper">
+                <label for="form-email-input" class="input-text form-email-label">email</label>
+                <input type="text" id="form-email-input">
+              </div>
+      
+              <div class="form-password-wrapper">
+                <label for="form-password-input" class="input-text form-password-label">password</label>
+                <input type="password" id="form-password-input">
+              </div>
+      
+              <input type="submit" id="form-button" value="Login">
+      
+              <button id="form-reg-btn">Register?</button>
+      
+            </div>
+          </div>
+      
+          <div class="modal-side modal-signup">
+            <div class="modal-title">Signup</div>
+            <div class="modal-form-signup">
+      
+              <div class="form-name-wrapper-signup">
+                <label for="form-name-input-signup" class="input-text form-name-label-signup">name</label>
+                <input type="text" id="form-name-input-signup">
+              </div>
+      
+              <div class="form-email-wrapper-signup">
+                <label for="form-email-input-signup" class="input-text form-email-label-signup">email</label>
+                <input type="text" id="form-email-input-signup">
+              </div>
+      
+              <div class="form-password-wrapper-signup">
+                <label for="form-password-input-signup" class="input-text form-password-label-signup">password</label>
+                <input type="password" id="form-password-input-signup">
+              </div>
+      
+              <input type="submit" id="form-button-signup" value="Signup">
+      
+              <button id="form-log-btn">Login?</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
+      <div class="wrapper" id="wrapper">
+      
+        <nav class="nav">
+
+          <div class="logo">Atomic Addicts</div>
+          
+          <div class="right-panel">
+            <div class="links">
+      
+            </div>
+            <div id="auth"><i class="fa-solid fa-user"></i></div>
+            <div id="authLogout" class="disabled"><i class="fa-solid fa-user-check "></i></div>
+          </div>
+      
+        </nav>
+      
+        <main class="main">
+          <section id="home" class="section1">
+           
+            <h3>HOME</h3>
+            Welcome to Atomic Addicts.
+            Habits are essential to our health. They can make or break your chances of achieving and maintaining lifestyle goals such as sticking to an eating plan, exercising regularly, and managing finances, along with increasing quality of life and promoting longevity.
+
+
+            This app is for tracking, managing and cultivating good habits. In-built are five key habits for you to choose from:
+            <ul>
+              <li>Sleeping</li>
+              <li>Exercise</li>
+              <li>Water Intake</li>
+              <li>Smoking</li>
+              <li>Savings</li>
+            </ul>
+            
+            <p>All the motivation in the world isn't going to help you if you don't have a system or a collection of good habits to lean on. Systems keep you in check. Conversely, all the motivation in the world won't help you beat bad habits either.</p>
+            <div id="imgWrapper">
+              <img src="./pics/Dominoes.jpeg" alt="a man trying to push back a system">
+            </div>
+            
+            
+            <p>Remember, it ain’t about the cheddar. It’s about the cheese. </p>
+
+          </section>
+          <section id="metrics" class="section1 disabled">
+            <h3>METRICS</h3>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias inventore numquam debitis! Quae et dolor animi tenetur esse! Mollitia harum quae dolor modi eum sapiente odio quod sequi assumenda ipsam?
+          </section>
+          <section id="habits" class="section1 disabled">
+            
+          </section>
+        </main>
+      
+        <footer class="footer">
+          <div class="selection" id="selection-1"> <a href="#" class="sel-btn"> <i class="fa-solid fa-house "></i> </a></div>
+          <div class="selection disabled" id="selection-2"> <a href="#" class="sel-btn"> <i class="fa-solid fa-chart-line"></i> </a></div>
+          <div class="selection disabled" id="selection-3"> <a href="#" class="sel-btn"> <i class="fa-solid fa-smoking"></i> </a></div>
+          
+        </footer>
+      </div>  
+      
+  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/jwt-decode@1.5.1/build/jwt-decode.min.js'></script>"
+  
+  <script src="./js/utils.js"></script>
+  <script src="./js/habits.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/habitsCards.js"></script>
+  <script src="./js/metrics.js"></script>
+</body>
+</html>

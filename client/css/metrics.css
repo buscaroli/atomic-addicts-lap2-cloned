@@ -1,0 +1,136 @@
+/* #metrics {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+} */
+
+
+
+
+.calendar-wrapper {
+  width: 100%;
+  margin-top: 20px;
+  
+}
+
+.calendar-month {
+  text-align: center;
+  font-size: 2.0rem;
+}
+
+.calendar-days-wrapper {
+  /* border: 1px solid black; */
+  margin-top: 1rem;
+  display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day {
+  
+  width: 50px;
+  height: 50px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.calendar-day-name {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-day-number {
+  
+}
+
+.selectionBarWrapper {
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: linear-gradient(125deg, var(--colOne), var(--colTwo));
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+.metricsBtn {
+  color: var(--light);
+  width: 50px;
+  height: 50px;
+  padding-top: 12px;
+  padding-left: 12px;
+
+  border: 2px solid var(--light);
+  border-radius: 50%;
+}
+
+.metricsChartWrapper {
+  margin: 0 auto;
+  /* width: min(100%, 600px); */
+  width: 100%;
+  height: 400px;
+  margin-top: 10px;
+  /* background-color: salmon; */
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  align-items: center;
+}
+
+.streakWrapper {
+  /* background-color: lightblue; */
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  border: 2px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.streakWrapperTitle {
+  width: 100%;
+  height: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.7rem;
+  padding-top: 60px;
+}
+
+.streakWrapperValue {
+  width: 100%;
+  height: 100%;
+  /* background-color: bisque; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding-bottom: 60px
+}
+
+.chartFrame {
+  position: relative;
+  /* background-color: lightgoldenrodyellow; */
+  width: 100%;
+  height: 100%;
+}
+
+.chartCanvas {
+  position: relative;
+  /* background-color: lightgoldenrodyellow; */
+  width: 100%;
+  height: 100%;
+}
